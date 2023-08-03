@@ -11,16 +11,16 @@ using SunTechInvestments.EventHandler.Domain.Entities;
 
 namespace SunTechInvestments.EventHandler
 {
-    public class HandleEvent
+    public class CustomerInfoHandleEvent
     {
         private readonly IProcessEvent _processEvent;
 
-        public HandleEvent(IProcessEvent processEvent)
+        public CustomerInfoHandleEvent(IProcessEvent processEvent)
         {
             _processEvent = processEvent;
         }
 
-        [FunctionName("HandleEvent")]
+        [FunctionName("CustomerInfoHandleEvent")]
         public async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
